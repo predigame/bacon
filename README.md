@@ -1,7 +1,26 @@
-Making Bacon
-============
+# Making Bacon
 
-Here's a simple maze game that demonstrates some cool things we can do with actors. Create a new file named `bacon.py` and start with our standard first three lines of code:
+A simple maze game that demonstrates some cool things we can do with actors. Create a new file named `bacon.py` and start with our standard first three lines of code:
+
+## Prerequisites
+You'll need to have the Predigame platform installed, a trusty text editor handy, and the command prompt (or terminal) open to complete this tutorial. Visit [http://predigame.io](http://predigame.io) for installation instructions.
+
+## Download Existing Game (Optional)
+We have a version of this game already done and ready to go. Just run the following command:
+
+```
+pred pull bacon
+```
+
+Then read the rest of the tutorial and follow along.
+
+## Getting Started
+To get things started, we're going to create a new Predigame game. This can be done by typing the following the command in the terminal:
+
+```
+pred new bacon
+```
+Now in the text editor, find and open the file `bacon/game.py`. Fix up your code so it looks like the example below:
 
 ```python
 WIDTH = 30

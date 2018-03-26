@@ -31,7 +31,7 @@ def create_piggy(num=PIGGIES):
       while at(pos) is not None:
          pos = rand_pos()
 
-      piggy = actor('Piggle', pos, tag='piggy')
+      piggy = actor('Porter', pos, tag='piggy')
 
       # graze is a random walk
       piggy.wander(partial(graze, piggy), time=0.75)
@@ -48,7 +48,7 @@ def shoot():
     # if it's a piggy and that piggy is alive
     if target and target.tag == 'piggy' and target.health > 0:
         # kill the piggy
-        target.kill()
+        target.kill(delay=3)
         # tally the kill
         score(1)
 

@@ -77,7 +77,7 @@ If this works, try adding some piggies. Here is one case where the `PIGGIES` con
 def create_piggy(num):
     for x in range(num):
         pos = rand_pos()
-        piggy = actor('Piggle', pos, tag='piggy')
+        piggy = actor('Porter', pos, tag='piggy')
         piggy.move_to((pos))
         # graze is a random walk
         piggy.wander(partial(graze, piggy), time=0.75)
@@ -85,7 +85,7 @@ def create_piggy(num):
 # create some piggies
 create_piggy(PIGGIES)
 ```
-`Piggle` is an animated actor. There is a special callback function `wander` that allows the computer to control the movement of an actor. The `wander` is called for every movement, in the case of our piggy, calls the Predigame internal `graze` callback function which is a random and undirected movement.  
+`Porter` is an animated actor. There is a special callback function `wander` that allows the computer to control the movement of an actor. The `wander` is called for every movement, in the case of our piggy, calls the Predigame internal `graze` callback function which is a random and undirected movement.  
 
 Try running saving these updates and running the game. We'll see the maze, our player, and now some piggies! It's possible to speed up the piggies by adjusting the `time` attribute for the random walk.
 
@@ -103,8 +103,8 @@ def shoot():
 
     # if it's a piggy and that piggy is alive
     if target and target.tag == 'piggy' and target.health > 0:
-        # kill the piggy
-        target.kill()
+        # kill the piggy and make it disappear in 3 seconds
+        target.kill(delay=3)
         # tally the kill
         score(1)
 
